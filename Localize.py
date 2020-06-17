@@ -197,6 +197,8 @@ def updateMenu(m):
 		if p == 'osx' and getSetting('hide_preferences_tab_on_menu_bar(osx)') and target[-17:] == mMenu:
 			menu[8]['caption'] = 'Preferences'
 			menu[8]['mnemonic'] = 'n'
+		if getSetting('custom_tab') and target[-17:] == mMenu:
+			menu.insert(-1,{"id": "customize"})
 		saveJson(target, menu)
 
 def updateTopMenu(locale):
