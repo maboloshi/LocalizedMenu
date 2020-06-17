@@ -194,7 +194,7 @@ def updateMenu(m):
 		target = os.path.join(dDir, k[:-5])
 		menu = getJson(m[k])
 		menu = updateHotkey(menu)
-		if p == 'osx' and target[-17:] == mMenu:
+		if p == 'osx' and getSetting('hide_preferences_tab_on_menu_bar(osx)') and target[-17:] == mMenu:
 			menu[8]['caption'] = 'Preferences'
 			menu[8]['mnemonic'] = 'n'
 		saveJson(target, menu)

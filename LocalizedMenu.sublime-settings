@@ -5,5 +5,9 @@
 
 	// allow to find localized menu of similar version for current locale
 	// true|false
-	"findSimilarVer": true
+	"findSimilarVer": true,
+
+	// On OSX, hide the preferences tab on the menu bar.
+	// true|false
+	"hide_preferences_tab_on_menu_bar(osx)": true
 }
