@@ -260,13 +260,6 @@ def unpackMenu(dFile, eDir):
 			os.rename(file, target);
 	z.close()
 
-def unpackSelf(pkgFile, pkgDir):
-	z = zipfile.ZipFile(pkgFile, 'r')
-	files = [i.filename for i in z.infolist()]
-	for item in files:
-		z.extract(item, pkgDir)
-	z.close()
-
 def getSetting(key, value = None):
 	conf = sublime.load_settings(sFile)
 	return conf.get(key, value)
@@ -306,12 +299,6 @@ def plugin_loaded():
 	sublime.set_timeout(init, 200)
 
 def init():
-	absDir = os.path.dirname(os.path.abspath(__file__))
-	if v == '3' and os.path.isfile(absDir):
-		pkgDir = os.path.join(sublime.packages_path(), pName);
-		if not os.path.isdir(pkgDir):
-			unpackSelf(absDir, pkgDir)
-		return
 	locale = ''
 	firstRun = False
 	fFile = os.path.join(pDir, '.firstRun')
