@@ -164,10 +164,9 @@ def makeMenu(locale, force = False):
 	f = os.path.join(lDir, locale, 'menu.json')
 	if not os.path.isfile(f):
 		link = getLink(locale)
-		if link:
-			f = os.path.join(lDir, link, 'menu.json')
-	if not os.path.isfile(f):
-		f = os.path.join(pDir, '.menu.json')
+		f = os.path.join(lDir, link, 'menu.json')
+		if not os.path.isfile(f):
+			f = os.path.join(pDir, '.menu.json')
 	menu = getJson(f)
 
 	for item in sorted(os.listdir(lDir)):
