@@ -1,5 +1,5 @@
 # LocalizedMenu
-Översättningsverktyg & Översättningsmeny för Sublime Text 3 slutanvändare
+Översättningsverktyg & Översättningsmeny för Sublime Text 3/4-Alpha slutanvändare
 
 - Erbjuder ett enkelt sätt att lägga till nya språk
 - Stödjer flera versioner/plattformar

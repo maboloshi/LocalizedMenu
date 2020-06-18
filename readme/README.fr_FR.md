@@ -1,5 +1,5 @@
 # LocalizedMenu
-Outil de localisation et menu localisé pour l'utilisateur final de Sublime Text 3
+Outil de localisation et menu localisé pour l'utilisateur final de Sublime Text 3/4-Alpha
 
 - Fournit un moyen facile d’ajouter de nouvelles langues
 - Support de plusieurs versions/plateformes
