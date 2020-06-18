@@ -201,11 +201,6 @@ def updateMenu(m):
 
 def updateTopMenu(locale):
 	tDir = pkgs + os.sep + 'ZZZZZZZZ-' + pName
-	if not (p == 'osx' and v == '2'):
-		if locale[:2] == 'en':
-			if os.path.isdir(tDir):
-				shutil.rmtree(tDir)
-			return
 	if not os.path.isdir(tDir):
 		os.makedirs(tDir)
 	topMenu = []
@@ -303,7 +298,7 @@ def init():
 		open(fFile, 'wt').write('')
 		locale = getSetting('locale', '')
 	eDir = os.path.join(mDir, version, 'en');
-	if v == '3' and not os.path.isdir(eDir):
+	if not os.path.isdir(eDir):
 		eFile = sublime.executable_path();
 		dFile = os.path.join(os.path.dirname(eFile), 'Packages', 'Default.sublime-package');
 		unpackMenu(dFile, eDir);
@@ -325,6 +320,3 @@ def updateLocale():
 	makeCommand(locale, True)
 	setLocale(locale, True)
 	open(lFile, 'wt').write(locale)
-
-if (v == '2'):
-	init()

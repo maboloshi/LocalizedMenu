@@ -1,5 +1,5 @@
 # LocalizedMenu
-Herramienta de traducción & menú traducido para usuarios finales de Sublime Text 2/3
+Herramienta de traducción & menú traducido para usuarios finales de Sublime Text 3
 
 - Proporciona un modo sencillo para añadir nuevos idiomas
 - Soporta múltiples versiones/plataformas
