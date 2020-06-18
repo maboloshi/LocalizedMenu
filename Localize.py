@@ -6,9 +6,7 @@ version = sublime.version()
 v = version[0]
 
 ps = os.path.abspath(__file__).split(os.sep)
-pName = ps[-2]
-if '.' in pName:
-	pName = os.path.splitext(pName)[0]
+pName = __package__
 pkgs = sublime.packages_path()
 if not pkgs:
 	pkgs = os.sep.join(ps[:-2])
