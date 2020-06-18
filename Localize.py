@@ -250,15 +250,12 @@ def restoreMenu():
 			open(target, 'wb').write(open(filename, 'rb').read())
 
 def unpackMenu(dFile, eDir):
-	z = zipfile.ZipFile(dFile, 'r')
-	files = [i.filename for i in z.infolist()]
-	for item in files:
-		if item.endswith(mExt[:-5]):
-			z.extract(item, eDir)
-			file = os.path.join(eDir, item)
-			target = os.path.join(eDir, item + '.json');
-			os.rename(file, target);
-	z.close()
+	os.makedirs(eDir,exist_ok = True)
+	with zipfile.ZipFile(dFile, 'r') as zf:
+		for item in zf.namelist():
+			if item.endswith(mExt[:-5]):
+				target = os.path.join(eDir, item + '.json')
+				open(target, "wb").write(zf.read(item))
 
 def getSetting(key, value = None):
 	conf = sublime.load_settings(sFile)
